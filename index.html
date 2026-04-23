@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSE 24 Batch</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0b0b0f;
+    color: white;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #1a1a2e, #0b0b0f);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+.hero span {
+    color: #6c63ff;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #aaa;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    border: none;
+    background: #6c63ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+/* Alumni Section */
+.alumni {
+    padding: 80px 60px;
+}
+
+.alumni h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+/* Search */
+.search-bar {
+    margin-bottom: 30px;
+}
+
+.search-bar input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    width: 300px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: linear-gradient(145deg, #121212, #0d0d0d);
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #6c63ff;
+}
+
+/* Avatar */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.role {
+    color: #aaa;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Tag */
+.tag {
+    background: #1a1a1a;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    border: 1px solid #333;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.socials a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid #333;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.socials a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+.socials button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid #333;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.socials button:hover {
+    background: #28a745;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Brand hover colors */
+.socials a:nth-child(1):hover { background: #1877f2; }   /* Facebook */
+.socials a:nth-child(2):hover { background: #0077b5; }   /* LinkedIn */
+.socials a:nth-child(3):hover { background: #28a745; }   /* Phone */
+
+</style>
+</head>
+<script>
+function copyPhone(number) {
+    navigator.clipboard.writeText(number).then(() => {
+        alert("Phone number copied: " + number);
+    }).catch(() => {
+        alert("Failed to copy");
+    });
+}
+</script>
+
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Welcome to <span>CSE 24</span></h1>
+    <p>The future engineers, coders, and innovators.</p>
+
+    <a href="#alumni">
+        <button>Explore the Batch ↓</button>
+    </a>
+</section>
+
+<!-- Alumni Section -->
+<section id="alumni" class="alumni">
+    <h2>Batch Directory</h2>
+    <p class="subtitle">Meet the members of CSE 24.</p>
+
+    <!-- Search -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search by name...">
+    </div>
+
+    <!-- Grid -->
+    <div class="grid">
+
+        <div class="card">
+            <div class="avatar">M</div>
+            <div class="name">Miraz Morshed</div>
+            <div class="role">Competitive Programmer</div>
+            <div class="tag">SEC B</div>
+
+            <div class="socials">
+                <a href="https://www.facebook.com/miraz3301" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://linkedin.com/in/miraz3301" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <button onclick="copyPhone('+880123456789')">
+                    <i class="fas fa-phone"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="avatar">F</div>
+            <div class="name">Farhan Sadik Tahsin</div>
+            <div class="role">Backend Developer</div>
+            <div class="tag">SEC B</div>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="tel:+880123456780"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="avatar">R</div>
+            <div class="name">Rafsan Hassan Ratul</div>
+            <div class="role">UI/UX Designer</div>
+            <div class="tag">SEC A</div>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="tel:+880123456781"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="avatar">M</div>
+            <div class="name">Mahdi Ishrak Mahir</div>
+            <div class="role">ML Enthusiast</div>
+            <div class="tag">SEC A</div>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="tel:+880123456782"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script>
+const searchInput = document.querySelector(".search-bar input");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("input", function () {
+    const value = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+        const name = card.querySelector(".name").textContent.toLowerCase();
+
+        if (name.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
+</body>
+</html>

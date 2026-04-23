@@ -222,23 +222,10 @@ body {
     transform: scale(1.1);
 }
 .typewriter {
-    display: inline-block;
-    overflow: hidden;
+    font-size: 60px;
+    font-weight: bold;
     white-space: nowrap;
     border-right: .15em solid #6c63ff;
-    animation: typing 2.5s steps(20, end), blink .75s step-end infinite;
-    width: 0;
-}
-
-/* typing */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 13ch; } /* FIX: stops exactly at text length */
-}
-
-/* cursor blink */
-@keyframes blink {
-    50% { border-color: transparent; }
 }
 </style>
 </head>
@@ -262,7 +249,7 @@ function copyPhone(number) {
         <i class="fab fa-facebook-f"></i>
     </a>
 
-    <h1 class="typewriter">Welcome to <span>CSE 24</span></h1>
+    <h1 class="typewriter"></h1>
     <p>The future engineers, coders, and innovators.</p>
 
     <a href="#alumni">
@@ -322,6 +309,33 @@ searchInput.addEventListener("input", function () {
         card.style.display = name.includes(value) ? "block" : "none";
     });
 });
+</script>
+<script>
+const text = "Welcome to CSE 24";
+const el = document.querySelector(".typewriter");
+
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        let char = text.charAt(i);
+
+        // make "CSE 24" blue
+        if (text.slice(0, i + 1).includes("CSE 24")) {
+            el.innerHTML = text.slice(0, i + 1).replace(
+                "CSE 24",
+                '<span style="color:#6c63ff;">CSE 24</span>'
+            );
+        } else {
+            el.innerHTML += char;
+        }
+
+        i++;
+        setTimeout(type, 100);
+    }
+}
+
+type();
 </script>
 
 </body>

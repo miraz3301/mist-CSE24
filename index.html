@@ -221,6 +221,23 @@ body {
     color: white;
     transform: scale(1.1);
 }
+    .typewriter {
+    overflow: hidden;
+    border-right: .15em solid #6c63ff;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation: typing 3s steps(25, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
 
 </style>
 </head>
@@ -244,7 +261,7 @@ function copyPhone(number) {
         <i class="fab fa-facebook-f"></i>
     </a>
 
-    <h1>Welcome to <span>CSE 24</span></h1>
+    <h1 class="typewriter">Welcome to <span>CSE 24</span></h1>
     <p>The future engineers, coders, and innovators.</p>
 
     <a href="#alumni">

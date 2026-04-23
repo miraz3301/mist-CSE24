@@ -65,7 +65,7 @@ body {
     transform: scale(1.05);
 }
 
-/* FB ICON TOP RIGHT */
+/* FACEBOOK ICON TOP RIGHT (FIXED) */
 .fb-icon {
     position: absolute;
     top: 25px;
@@ -80,8 +80,10 @@ body {
     border-radius: 50%;
     background: #111;
     border: 1px solid #333;
-    color: #aaa;
+
+    color: #1877f2; /* FIXED: visible Facebook blue */
     text-decoration: none;
+
     transition: 0.3s;
     font-size: 18px;
 }
@@ -140,7 +142,7 @@ body {
     border-color: #6c63ff;
 }
 
-/* AVATAR IMAGE */
+/* AVATAR */
 .avatar {
     width: 60px;
     height: 60px;
@@ -229,6 +231,7 @@ function copyPhone(number) {
 <!-- HERO -->
 <section class="hero">
 
+    <!-- FB ICON -->
     <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
         <i class="fab fa-facebook-f"></i>
     </a>
@@ -254,7 +257,6 @@ function copyPhone(number) {
 
     <div class="grid">
 
-        <!-- CARD 1 -->
         <div class="card">
             <div class="avatar">
                 <img src="images/miraz.jpg" alt="Miraz">
@@ -264,31 +266,13 @@ function copyPhone(number) {
             <div class="tag">SEC B</div>
 
             <div class="socials">
-                <a href="https://www.facebook.com/miraz3301" target="_blank">
+                <a href="https://facebook.com/miraz3301" target="_blank">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://linkedin.com/in/miraz3301" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <button onclick="copyPhone('+880123456789')">
-                    <i class="fas fa-phone"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-            <div class="avatar">
-                <img src="images/farhan.jpg" alt="Farhan">
-            </div>
-            <div class="name">Farhan Sadik Tahsin</div>
-            <div class="role">Backend Developer</div>
-            <div class="tag">SEC B</div>
-
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <button onclick="copyPhone('+880123456780')">
                     <i class="fas fa-phone"></i>
                 </button>
             </div>

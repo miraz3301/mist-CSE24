@@ -65,7 +65,7 @@ body {
     transform: scale(1.05);
 }
 
-/* FACEBOOK ICON TOP RIGHT (FIXED) */
+/* FB ICON TOP RIGHT */
 .fb-icon {
     position: absolute;
     top: 25px;
@@ -81,11 +81,10 @@ body {
     background: #111;
     border: 1px solid #333;
 
-    color: #1877f2; /* FIXED: visible Facebook blue */
+    color: #1877f2;
     text-decoration: none;
-
-    transition: 0.3s;
     font-size: 18px;
+    transition: 0.3s;
 }
 
 .fb-icon:hover {
@@ -187,6 +186,7 @@ body {
     margin-top: 12px;
 }
 
+/* base style */
 .socials a,
 .socials button {
     width: 35px;
@@ -203,7 +203,16 @@ body {
     text-decoration: none;
 }
 
-.socials a:hover {
+/* FIXED HOVER SYSTEM */
+.socials a.fb:hover {
+    background: #1877f2;
+    color: white;
+    transform: scale(1.1);
+}
+
+.socials a.linkedin:hover {
+    background: #0077b5;
+    color: white;
     transform: scale(1.1);
 }
 
@@ -231,7 +240,6 @@ function copyPhone(number) {
 <!-- HERO -->
 <section class="hero">
 
-    <!-- FB ICON -->
     <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
         <i class="fab fa-facebook-f"></i>
     </a>
@@ -261,17 +269,20 @@ function copyPhone(number) {
             <div class="avatar">
                 <img src="images/miraz.jpg" alt="Miraz">
             </div>
+
             <div class="name">Miraz Morshed</div>
             <div class="role">Competitive Programmer</div>
             <div class="tag">SEC B</div>
 
             <div class="socials">
-                <a href="https://facebook.com/miraz3301" target="_blank">
+                <a href="https://facebook.com/miraz3301" class="fb" target="_blank">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://linkedin.com/in/miraz3301" target="_blank">
+
+                <a href="https://linkedin.com/in/miraz3301" class="linkedin" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
+
                 <button onclick="copyPhone('+880123456789')">
                     <i class="fas fa-phone"></i>
                 </button>

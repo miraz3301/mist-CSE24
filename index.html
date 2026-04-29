@@ -93,6 +93,7 @@ body {
     transform: scale(1.1);
 }
 
+
 /* ALUMNI */
 .alumni {
     padding: 80px 60px;
@@ -227,6 +228,65 @@ body {
     white-space: nowrap;
     border-right: .15em solid #6c63ff;
 }
+/* MUSIC BUTTON */
+.music-player {
+    position: absolute;
+    top: 25px;
+    right: 80px; /* beside FB icon */
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    background: #111;
+    border: 1px solid #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.music-player:hover {
+    transform: scale(1.1);
+    border-color: #6c63ff;
+}
+
+/* SOUND BARS */
+.bars {
+    display: flex;
+    gap: 3px;
+}
+
+.bars span {
+    width: 4px;
+    height: 12px;
+    background: #6c63ff;
+    border-radius: 2px;
+    animation: none;
+}
+
+/* ANIMATION WHEN PLAYING */
+.music-player.playing .bars span:nth-child(1) {
+    animation: bounce 0.6s infinite;
+}
+.music-player.playing .bars span:nth-child(2) {
+    animation: bounce 0.6s infinite 0.2s;
+}
+.music-player.playing .bars span:nth-child(3) {
+    animation: bounce 0.6s infinite 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        height: 6px;
+    }
+    50% {
+        height: 16px;
+    }
+}
 </style>
 </head>
 
@@ -248,6 +308,19 @@ function copyPhone(number) {
     <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
         <i class="fab fa-facebook-f"></i>
     </a>
+    <!-- MUSIC BUTTON -->
+    <div class="music-player" onclick="toggleMusic()">
+        <div class="bars">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+        <source src="music/always_with_me_flute.mp3" type="audio/mpeg">
+    </audio>
 
     <h1 class="typewriter"></h1>
     <p>The future engineers, coders, and innovators.</p>
@@ -275,7 +348,7 @@ function copyPhone(number) {
                 <img src="images/miraz.jpg" alt="Miraz">
             </div>
 
-            <div class="name">Md Miraz Morshed</div>
+            <div class="name">Md. Miraz Morshed</div>
             <div class="role">Competitive Programmer</div>
             <div class="tag">SEC B</div>
 
@@ -383,6 +456,24 @@ function type() {
 }
 
 type();
+</script>
+<script>
+const music = document.getElementById("bgMusic");
+const player = document.querySelector(".music-player");
+
+let isPlaying = false;
+
+function toggleMusic() {
+    if (!isPlaying) {
+        music.muted = false;
+        music.play();
+        player.classList.add("playing");
+    } else {
+        music.pause();
+        player.classList.remove("playing");
+    }
+    isPlaying = !isPlaying;
+}
 </script>
 
 </body>

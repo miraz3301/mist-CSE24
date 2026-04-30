@@ -287,6 +287,21 @@ body {
         height: 16px;
     }
 }
+/* LOGO TOP LEFT */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;   /* medium size (same visual balance as icons) */
+    width: auto;
+    object-fit: contain;
+}
 </style>
 </head>
 
@@ -304,6 +319,10 @@ function copyPhone(number) {
 
 <!-- HERO -->
 <section class="hero">
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
 
     <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
         <i class="fab fa-facebook-f"></i>

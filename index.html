@@ -223,10 +223,49 @@ body {
     transform: scale(1.1);
 }
 .typewriter {
-    font-size: 60px;
-    font-weight: bold;
-    white-space: nowrap;
-    border-right: .15em solid #6c63ff;
+    font-size: 64px;
+    font-weight: 800;
+    text-align: center;
+
+    background: linear-gradient(90deg, #6c63ff, #00d4ff, #6c63ff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: gradientMove 4s linear infinite;
+
+    position: relative;
+    transition: 0.3s;
+}
+
+/* glowing effect */
+.typewriter::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0%;
+    height: 3px;
+    background: #6c63ff;
+    transition: 0.4s;
+    transform: translateX(-50%);
+}
+
+/* hover magic */
+.typewriter:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 20px rgba(108,99,255,0.8);
+}
+
+.typewriter:hover::after {
+    width: 80%;
+}
+
+/* gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% }
+    100% { background-position: 200% }
 }
 /* MUSIC BUTTON */
 .music-player {
@@ -454,28 +493,17 @@ searchInput.addEventListener("input", function () {
 const text = "Welcome to CSE 24";
 const el = document.querySelector(".typewriter");
 
-let i = 0;
+let index = 0;
 
-function type() {
-    if (i < text.length) {
-        let char = text.charAt(i);
-
-        // make "CSE 24" blue
-        if (text.slice(0, i + 1).includes("CSE 24")) {
-            el.innerHTML = text.slice(0, i + 1).replace(
-                "CSE 24",
-                '<span style="color:#6c63ff;">CSE 24</span>'
-            );
-        } else {
-            el.innerHTML += char;
-        }
-
-        i++;
-        setTimeout(type, 100);
+function typeEffect() {
+    if (index < text.length) {
+        el.innerHTML = text.substring(0, index + 1);
+        index++;
+        setTimeout(typeEffect, 80);
     }
 }
 
-type();
+typeEffect();
 </script>
 <script>
 const music = document.getElementById("bgMusic");

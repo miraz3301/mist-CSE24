@@ -1,11 +1,13 @@
 fetch("students.json")
     .then(res => res.json())
     .then(students => {
-        const grid = document.querySelector(".grid");
 
+        const grid = document.querySelector(".grid");
         students.forEach(s => {
-            const card = `
-            <div class="card">
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
                 <div class="avatar">
                     <img src="${s.image}" alt="${s.name}">
                 </div>
@@ -27,9 +29,22 @@ fetch("students.json")
                         <i class="fas fa-phone"></i>
                     </button>
                 </div>
-            </div>
             `;
 
-            grid.innerHTML += card;
+            grid.appendChild(card);
         });
+
+        
+        const searchInput = document.querySelector(".search-bar input");
+
+        searchInput.addEventListener("input", function () {
+            const value = this.value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                const name = card.querySelector(".name").textContent.toLowerCase();
+                card.style.display = name.includes(value) ? "block" : "none";
+            });
+        });
+
     });

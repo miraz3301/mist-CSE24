@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Md. Miraz Morshed",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/miraz.jpg",
+    "facebook": "https://facebook.com/miraz3301",
+    "linkedin": "https://linkedin.com/in/miraz3301",
+    "phone": "01533418722"
+  },
+  {
+    "name": "Rafsan Hassan Ratul",
+    "role": "Competitive Programmer",
+    "section": "SEC A",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/SurgicalProgrammer",
+    "linkedin": "https://linkedin.com/in/SurgicalProgrammer",
+    "phone": "01403709262"
+  },
+  {
+    "name": "Md. Mahdi Israk Mahir",
+    "role": "Competitive Programmer",
+    "section": "SEC A",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/mahdi.israkov",
+    "linkedin": "https://linkedin.com/in/mahdiisrakov",
+    "phone": "01678417343"
+  }
+]

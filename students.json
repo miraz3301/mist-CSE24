@@ -25,5 +25,42 @@
     "facebook": "https://facebook.com/mahdi.israkov",
     "linkedin": "https://linkedin.com/in/mahdiisrakov",
     "phone": "01678417343"
+  },
+  {
+    "name": "Azmain Hasan Abir",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://www.facebook.com/share/1BMxrJ23hN/",
+    "linkedin": "https://linkedin.com/",
+    "phone": "01914577315"
+  },
+  {
+    "name": "Tasnuva Jabin Rimpa ",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://www.facebook.com/share/1MeohGby2Q/",
+    "linkedin": "https://linkedin.com/",
+    "phone": "01770292655"
+  },
+  {
+    "name": "Rifah Tahsin",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://www.facebook.com/share/1LWN5QVati/",
+    "linkedin": "https://bd.linkedin.com/in/rifah-tahsin-5b4948380",
+    "phone": "01319870198"
+  },
+  {
+    "name": "SAIMUM SADMAN JOY",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://www.facebook.com/share/1H5LqGNSSc/?mibextid=wwXIfr",
+    "linkedin": "https://bd.linkedin.com/",
+    "phone": "'01736448194"
   }
+  
 ]

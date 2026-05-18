@@ -1,3 +1,17 @@
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import 
+{
+    getFirestore,
+    collection,
+    addDoc,
+    query,
+    orderBy,
+    onSnapshot,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 fetch("students.json")
     .then(res => res.json())
     .then(students => {
@@ -48,3 +62,165 @@ fetch("students.json")
         });
 
     });
+
+/* FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyDLidcr-mjQc067GXByR624kAxwsEkZsv4",
+  authDomain: "cse24-message.firebaseapp.com",
+  projectId: "cse24-message",
+  storageBucket: "cse24-message.firebasestorage.app",
+  messagingSenderId: "486721044271",
+  appId: "1:486721044271:web:0dd35ff2ec64d7ad4a2bda",
+  measurementId: "G-6HFEBEZ3L0"
+};
+
+
+/* INIT FIREBASE */
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+/* ELEMENTS */
+const popup =
+document.getElementById("messagePopup");
+
+const container =
+document.getElementById("messagesContainer");
+
+
+/* OPEN POPUP */
+window.openMessages = function () {
+
+    popup.style.display = "flex";
+}
+
+
+/* CLOSE POPUP */
+window.closeMessages = function () {
+
+    popup.style.display = "none";
+}
+
+
+/* SEND MESSAGE */
+window.sendMessage = async function () {
+
+    const username =
+    document.getElementById("username");
+
+    const messageText =
+    document.getElementById("messageText");
+
+
+    const name =
+    username.value.trim();
+
+    const text =
+    messageText.value.trim();
+
+
+    if (!name || !text) {
+
+        alert("Please enter name and message.");
+
+        return;
+    }
+
+
+    try {
+
+        await addDoc(
+            collection(db, "messages"),
+            {
+
+                name: name,
+
+                text: text,
+
+                createdAt: serverTimestamp()
+            }
+        );
+
+
+        messageText.value = "";
+
+    }
+
+    catch (err) {
+
+        alert("Failed to send message.");
+
+        console.error(err);
+    }
+}
+
+
+/* LIVE MESSAGE LOADING */
+const q = query(
+    collection(db, "messages"),
+    orderBy("createdAt", "desc")
+);
+
+
+onSnapshot(q, (snapshot) => {
+
+    container.innerHTML = "";
+
+
+    if (snapshot.empty) {
+
+        container.innerHTML = `
+            <div class="message">
+                No messages yet.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    snapshot.forEach((doc) => {
+
+        const msg = doc.data();
+
+        let time = "Just now";
+
+
+        if (msg.createdAt) {
+
+            time =
+            msg.createdAt
+            .toDate()
+            .toLocaleString();
+        }
+
+
+        const div =
+        document.createElement("div");
+
+        div.className = "message";
+
+
+        div.innerHTML = `
+
+            <div class="message-name">
+                ${msg.name}
+            </div>
+
+            <div class="message-text">
+                ${msg.text}
+            </div>
+
+            <div class="message-time">
+                ${time}
+            </div>
+
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+});

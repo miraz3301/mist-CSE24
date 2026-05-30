@@ -5,6 +5,6 @@
 * https://mist-cse24.vercel.app
 * https://mistcse24.vercel.app
   
-### Contributors
+### Contributor
 * Mohammad Miraz Morshed
 * MIST CSE 24

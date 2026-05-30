@@ -169,7 +169,243 @@
     "facebook": "https://www.facebook.com/share/197B6Ycazb/",
     "linkedin": "https://www.linkedin.com/",
     "phone": "01314150526"
+  },
+  {
+    "name": "Tasnuva",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Fahim Siddique",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://www.facebook.com/share/1B2rughs5v/",
+    "linkedin": "https://linkedin.com/",
+    "phone": "01308314525"
+  },
+  {
+    "name": "Kazi Naeem Uddin",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md. Hasib Bin Hossain",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Bijoy Sarkar",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Ragib Mahtab Oyon",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Adiba Binte Atique",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Jonayed Ahmed",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Tanvir Ahmed Zidan",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Mahin-Ar-Rahman",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md. Fojla Rabbi",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Zarin Tasnim",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md Saber Hossen",
+    "role": "ACR",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md. Farhan Sadik Tahsin",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://www.facebook.com/farhan.sadik.tahsin",
+    "linkedin": "https://www.linkedin.com/in/farhan-sadik-tahsin-53419a34b",
+    "phone": "01868224595"
+  },
+  {
+    "name": "Md. Fojla Rabbi",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Afia Mahmuda Ema",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md Sazidul Islam Bayezid",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Kaif Rahman",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": "01745930571"
+  },
+  {
+    "name": "Nujhat Nazifah Nawal",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Turjoy Barua",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md. Muhibuzzaman Khan",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Ummey Habiba Pranty",
+    "role": "CR",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Syed Zahin Waheed",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Md. Nasimul Goni Sakir",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": "01331735675"
+  },
+  {
+    "name": "Md. Fojla Rabbi",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/b.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
+  },
+  {
+    "name": "Nazifa Tabassum",
+    "role": "Competitive Programmer",
+    "section": "SEC B",
+    "image": "images/g.jpg",
+    "facebook": "https://facebook.com/",
+    "linkedin": "https://linkedin.com/",
+    "phone": ""
   }
+  
+  
   
   
 ]

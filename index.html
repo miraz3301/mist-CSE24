@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,14 +43,13 @@
             content: "";
             position: absolute;
             inset: 0;
-
             background-image:
                 linear-gradient(rgba(108, 99, 255, 0.15) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(108, 99, 255, 0.15) 1px, transparent 1px);
-
             background-size: 40px 40px;
-
+            background-position: var(--grid-x, 0px) var(--grid-y, 0px);
             z-index: 0;
+            transition: background-position 2.5s ease;
         }
 
         .hero::after {
@@ -312,7 +312,7 @@
             position: absolute;
             top: 25px;
             right: 80px;
-            
+
 
             width: 45px;
             height: 45px;
@@ -382,7 +382,7 @@
 
         .logo img {
             height: 70px;
-            
+
             width: auto;
             object-fit: contain;
         }
@@ -415,7 +415,7 @@
             transform: scale(1.1);
         }
 
-        
+
         .message-popup {
             position: fixed;
             inset: 0;
@@ -429,7 +429,7 @@
             z-index: 9999;
         }
 
-        
+
         .popup-box {
             width: 420px;
             max-width: 95%;
@@ -446,7 +446,7 @@
             overflow: hidden;
         }
 
-        
+
         .popup-header {
             padding: 18px;
 
@@ -461,7 +461,7 @@
             font-size: 18px;
         }
 
-        
+
         .close-btn {
             background: none;
             border: none;
@@ -476,7 +476,7 @@
             color: white;
         }
 
-        
+
         .messages-container {
             flex: 1;
 
@@ -489,7 +489,7 @@
             gap: 15px;
         }
 
-        
+
         .message {
             background: #1a1a1a;
             border: 1px solid #333;
@@ -517,7 +517,7 @@
             font-size: 12px;
         }
 
-        
+
         .message-input {
             border-top: 1px solid #222;
 
@@ -564,7 +564,7 @@
             transform: scale(1.02);
         }
 
-        
+
         .messages-container::-webkit-scrollbar {
             width: 6px;
         }
@@ -574,7 +574,7 @@
             border-radius: 10px;
         }
 
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -641,7 +641,7 @@
 </script>
 
 <body>
-    
+
     <section class="hero">
         <div id="stars"></div>
         <!-- LOGO -->
@@ -817,6 +817,27 @@
             starsContainer.appendChild(star);
         }
     </script>
+    <script>
+        const hero = document.querySelector(".hero");
+
+        hero.addEventListener("mousemove", (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const offsetX = -(x % 40);
+            const offsetY = -(y % 40);
+
+            hero.style.setProperty("--grid-x", offsetX + "px");
+            hero.style.setProperty("--grid-y", offsetY + "px");
+        });
+
+        hero.addEventListener("mouseleave", () => {
+            hero.style.setProperty("--grid-x", "0px");
+            hero.style.setProperty("--grid-y", "0px");
+        });
+    </script>
+
     <p style="text-align: right;">© github:miraz3301</p>
 </body>
 

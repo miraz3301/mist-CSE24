@@ -1,705 +1,823 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSE 24 Batch</title>
-<link rel="icon" type="image/png" href="images/logoT.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-html {
-    scroll-behavior: smooth;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-}
-
-body {
-    background: #0b0b0f;
-    color: white;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle at top, #1a1a2e, #0b0b0f);
-    text-align: center;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-.hero span {
-    color: #6c63ff;
-}
-
-.hero p {
-    margin-top: 20px;
-    color: #aaa;
-}
-
-.hero button {
-    margin-top: 30px;
-    padding: 14px 28px;
-    border-radius: 12px;
-    border: none;
-    background: #6c63ff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.hero button:hover {
-    transform: scale(1.05);
-}
-
-/* FB ICON TOP RIGHT */
-.fb-icon {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #111;
-    border: 1px solid #333;
-
-    color: #1877f2;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.fb-icon:hover {
-    background: #1877f2;
-    color: white;
-    transform: scale(1.1);
-}
-
-
-/* ALUMNI */
-.alumni {
-    padding: 80px 60px;
-}
-
-.alumni h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: #aaa;
-    margin-bottom: 25px;
-}
-
-.search-bar {
-    margin-bottom: 30px;
-}
-
-.search-bar input {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    background: #111;
-    color: white;
-    width: 300px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* CARD */
-.card {
-    background: linear-gradient(145deg, #121212, #0d0d0d);
-    border: 1px solid #222;
-    padding: 20px;
-    border-radius: 16px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #6c63ff;
-}
-
-/* AVATAR */
-.avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 15px;
-    border: 2px solid #333;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TEXT */
-.name {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.role {
-    color: #aaa;
-    font-size: 14px;
-    margin: 8px 0;
-}
-
-.tag {
-    background: #1a1a1a;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    border: 1px solid #333;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-/* SOCIAL */
-.socials {
-    display: flex;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-/* base style */
-.socials a,
-.socials button {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #111;
-    border: 1px solid #333;
-    color: #aaa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-/* FIXED HOVER SYSTEM */
-.socials a.fb:hover {
-    background: #1877f2;
-    color: white;
-    transform: scale(1.1);
-}
-
-.socials a.linkedin:hover {
-    background: #0077b5;
-    color: white;
-    transform: scale(1.1);
-}
-
-.socials button:hover {
-    background: #28a745;
-    color: white;
-    transform: scale(1.1);
-}
-.typewriter {
-    font-size: 64px;
-    font-weight: 800;
-    text-align: center;
-
-    background: linear-gradient(90deg, #6c63ff, #00d4ff, #6c63ff);
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    animation: gradientMove 4s linear infinite;
-
-    position: relative;
-    transition: 0.3s;
-}
-
-/* glowing effect */
-.typewriter::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    width: 0%;
-    height: 3px;
-    background: #6c63ff;
-    transition: 0.4s;
-    transform: translateX(-50%);
-}
-
-/* hover magic */
-.typewriter:hover {
-    transform: scale(1.08);
-    text-shadow: 0 0 20px rgba(108,99,255,0.8);
-}
-
-.typewriter:hover::after {
-    width: 80%;
-}
-
-/* gradient animation */
-@keyframes gradientMove {
-    0% { background-position: 0% }
-    100% { background-position: 200% }
-}
-/* MUSIC BUTTON */
-.music-player {
-    position: absolute;
-    top: 25px;
-    right: 80px; /* beside FB icon */
-
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-
-    background: #111;
-    border: 1px solid #333;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.music-player:hover {
-    transform: scale(1.1);
-    border-color: #6c63ff;
-}
-
-/* SOUND BARS */
-.bars {
-    display: flex;
-    gap: 3px;
-}
-
-.bars span {
-    width: 4px;
-    height: 12px;
-    background: #6c63ff;
-    border-radius: 2px;
-    animation: none;
-}
-
-/* ANIMATION WHEN PLAYING */
-.music-player.playing .bars span:nth-child(1) {
-    animation: bounce 0.6s infinite;
-}
-.music-player.playing .bars span:nth-child(2) {
-    animation: bounce 0.6s infinite 0.2s;
-}
-.music-player.playing .bars span:nth-child(3) {
-    animation: bounce 0.6s infinite 0.4s;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        height: 6px;
-    }
-    50% {
-        height: 16px;
-    }
-}
-/* LOGO TOP LEFT */
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 70px;   /* medium size (same visual balance as icons) */
-    width: auto;
-    object-fit: contain;
-}
-/* MESSAGE ICON */
-.message-icon {
-    position: absolute;
-    top: 25px;
-    right: 135px;
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-    background: #111;
-    border: 1px solid #333;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #aaa;
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.message-icon:hover {
-    background: #6c63ff;
-    color: white;
-    transform: scale(1.1);
-}
-
-/* POPUP */
-.message-popup {
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0,0,0,0.75);
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 9999;
-}
-
-/* BOX */
-.popup-box {
-    width: 420px;
-    max-width: 95%;
-    height: 600px;
-
-    background: #111;
-    border: 1px solid #333;
-
-    border-radius: 18px;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-}
-
-/* HEADER */
-.popup-header {
-    padding: 18px;
-
-    border-bottom: 1px solid #222;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popup-header h3 {
-    font-size: 18px;
-}
-
-/* CLOSE */
-.close-btn {
-    background: none;
-    border: none;
-
-    color: #aaa;
-    font-size: 20px;
-
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: white;
-}
-
-/* MESSAGES */
-.messages-container {
-    flex: 1;
-
-    overflow-y: auto;
-
-    padding: 20px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* SINGLE MESSAGE */
-.message {
-    background: #1a1a1a;
-    border: 1px solid #333;
-
-    padding: 14px;
-    border-radius: 14px;
-
-    animation: fadeIn 0.3s ease;
-}
-
-.message-name {
-    color: #6c63ff;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.message-text {
-    line-height: 1.5;
-    word-wrap: break-word;
-}
-
-.message-time {
-    margin-top: 10px;
-    color: #777;
-    font-size: 12px;
-}
-
-/* INPUT AREA */
-.message-input {
-    border-top: 1px solid #222;
-
-    padding: 15px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.message-input input,
-.message-input textarea {
-    background: #0b0b0f;
-    border: 1px solid #333;
-
-    color: white;
-
-    border-radius: 12px;
-
-    padding: 12px;
-
-    outline: none;
-}
-
-.message-input textarea {
-    resize: none;
-    height: 90px;
-}
-
-.message-input button {
-    padding: 12px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #6c63ff;
-    color: white;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.message-input button:hover {
-    transform: scale(1.02);
-}
-
-/* SCROLLBAR */
-.messages-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.messages-container::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 24 Batch</title>
+    <link rel="icon" type="image/png" href="images/logoT.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: #0b0b0f;
+            color: white;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at top, #1a1a2e, #0b0b0f 70%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(108, 99, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(108, 99, 255, 0.15) 1px, transparent 1px);
+
+            background-size: 40px 40px;
+
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(circle at center,
+                    rgba(108, 99, 255, 0.15),
+                    transparent 70%);
+
+            pointer-events: none;
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top, #1a1a2e, #0b0b0f);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+        }
+
+        .hero span {
+            color: #6c63ff;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            border: none;
+            background: #6c63ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.05);
+        }
+
+        .fb-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #111;
+            border: 1px solid #333;
+
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .fb-icon:hover {
+            background: #1877f2;
+            color: white;
+            transform: scale(1.1);
+        }
+
+
+        .alumni {
+            padding: 80px 60px;
+        }
+
+        .alumni h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            width: 300px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #121212, #0d0d0d);
+            border: 1px solid #222;
+            padding: 20px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #6c63ff;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 2px solid #333;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .role {
+            color: #aaa;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .tag {
+            background: #1a1a1a;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            border: 1px solid #333;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .socials a,
+        .socials button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #111;
+            border: 1px solid #333;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .socials a.fb:hover {
+            background: #1877f2;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .socials a.linkedin:hover {
+            background: #0077b5;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .socials button:hover {
+            background: #28a745;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .typewriter {
+            font-size: 64px;
+            font-weight: 800;
+            text-align: center;
+
+            background: linear-gradient(90deg, #6c63ff, #00d4ff, #6c63ff);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            animation: gradientMove 4s linear infinite;
+
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .typewriter::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 0%;
+            height: 3px;
+            background: #6c63ff;
+            transition: 0.4s;
+            transform: translateX(-50%);
+        }
+
+        .typewriter:hover {
+            transform: scale(1.08);
+            text-shadow: 0 0 20px rgba(108, 99, 255, 0.8);
+        }
+
+        .typewriter:hover::after {
+            width: 80%;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 200%
+            }
+        }
+
+        .music-player {
+            position: absolute;
+            top: 25px;
+            right: 80px;
+            
+
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+
+            background: #111;
+            border: 1px solid #333;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1);
+            border-color: #6c63ff;
+        }
+
+        .bars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .bars span {
+            width: 4px;
+            height: 12px;
+            background: #6c63ff;
+            border-radius: 2px;
+            animation: none;
+        }
+
+        .music-player.playing .bars span:nth-child(1) {
+            animation: bounce 0.6s infinite;
+        }
+
+        .music-player.playing .bars span:nth-child(2) {
+            animation: bounce 0.6s infinite 0.2s;
+        }
+
+        .music-player.playing .bars span:nth-child(3) {
+            animation: bounce 0.6s infinite 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                height: 6px;
+            }
+
+            50% {
+                height: 16px;
+            }
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            
+            width: auto;
+            object-fit: contain;
+        }
+
+        .message-icon {
+            position: absolute;
+            top: 25px;
+            right: 135px;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+            background: #111;
+            border: 1px solid #333;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #aaa;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .message-icon:hover {
+            background: #6c63ff;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        
+        .message-popup {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.75);
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 9999;
+        }
+
+        
+        .popup-box {
+            width: 420px;
+            max-width: 95%;
+            height: 600px;
+
+            background: #111;
+            border: 1px solid #333;
+
+            border-radius: 18px;
+
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+        }
+
+        
+        .popup-header {
+            padding: 18px;
+
+            border-bottom: 1px solid #222;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-header h3 {
+            font-size: 18px;
+        }
+
+        
+        .close-btn {
+            background: none;
+            border: none;
+
+            color: #aaa;
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: white;
+        }
+
+        
+        .messages-container {
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        
+        .message {
+            background: #1a1a1a;
+            border: 1px solid #333;
+
+            padding: 14px;
+            border-radius: 14px;
+
+            animation: fadeIn 0.3s ease;
+        }
+
+        .message-name {
+            color: #6c63ff;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .message-text {
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .message-time {
+            margin-top: 10px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        
+        .message-input {
+            border-top: 1px solid #222;
+
+            padding: 15px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message-input input,
+        .message-input textarea {
+            background: #0b0b0f;
+            border: 1px solid #333;
+
+            color: white;
+
+            border-radius: 12px;
+
+            padding: 12px;
+
+            outline: none;
+        }
+
+        .message-input textarea {
+            resize: none;
+            height: 90px;
+        }
+
+        .message-input button {
+            padding: 12px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #6c63ff;
+            color: white;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .message-input button:hover {
+            transform: scale(1.02);
+        }
+
+        
+        .messages-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .messages-container::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #stars {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+
+            opacity: 0.25;
+
+            animation:
+                twinkle ease-in-out infinite,
+                floatStar linear infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.15;
+            }
+
+            50% {
+                opacity: 0.55;
+            }
+        }
+
+        @keyframes floatStar {
+            from {
+                transform: translateY(0px);
+            }
+
+            to {
+                transform: translateY(-30px);
+            }
+        }
+    </style>
 </head>
 
 <script>
-function copyPhone(number) {
-    navigator.clipboard.writeText(number).then(() => {
-        alert("Phone number copied: " + number);
-    }).catch(() => {
-        alert("Failed to copy");
-    });
-}
+    function copyPhone(number) {
+        navigator.clipboard.writeText(number).then(() => {
+            alert("Phone number copied: " + number);
+        }).catch(() => {
+            alert("Failed to copy");
+        });
+    }
 </script>
 
 <body>
-
-<!-- HERO -->
-<section class="hero">
-    <!-- LOGO -->
-    <div class="logo">
-        <img src="images/logo.png" alt="Logo">
-    </div>
-
-    <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    <!-- MESSAGE ICON -->
-    <div class="message-icon" onclick="openMessages()">
-        <i class="fa-regular fa-message"></i>
-    </div>
-    <!-- MUSIC BUTTON -->
-    <div class="music-player" onclick="toggleMusic()">
-        <div class="bars">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    <!-- AUDIO -->
-    <audio id="bgMusic" loop>
-        <source src="music/always_with_me_flute.mp3" type="audio/mpeg">
-    </audio>
-    <!-- MESSAGE POPUP -->
-    <div class="message-popup" id="messagePopup">
-
-        <div class="popup-box">
-
-            <!-- HEADER -->
-            <div class="popup-header">
-                <h3>CSE 24 Messages</h3>
-
-                <button class="close-btn" onclick="closeMessages()">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- MESSAGE AREA -->
-            <div class="messages-container" id="messagesContainer">
-
-            </div>
-
-            <!-- INPUT -->
-            <div class="message-input">
-
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Your name"
-                >
-
-                <textarea
-                    id="messageText"
-                    placeholder="Write a message for the batch..."
-                ></textarea>
-
-                <button onclick="sendMessage()">
-                    Send Message
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <h1 class="typewriter"></h1>
-    <br>
-    <h4>Military Institute of Science and Technology</h4>
-    <h4>Department of CSE, Batch CSE 24</h4>
-
-    <a href="#alumni">
-        <button>Explore the Batch ↓</button>
-    </a>
-
-</section>
-
-<!-- ALUMNI -->
-<section id="alumni" class="alumni">
-
-    <h2>Batch Directory</h2>
-    <p class="subtitle">Meet the members of CSE 24.</p>
-
-    <div class="search-bar">
-        <input type="text" placeholder="Search by name...">
-    </div>
-
-    <div class="grid">
-    </div>
     
-</section>
+    <section class="hero">
+        <div id="stars"></div>
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
 
-<script>
-const searchInput = document.querySelector(".search-bar input");
-const cards = document.querySelectorAll(".card");
+        <a href="https://www.facebook.com/YOUR_BATCH_PAGE" target="_blank" class="fb-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- MESSAGE ICON -->
+        <div class="message-icon" onclick="openMessages()">
+            <i class="fa-regular fa-message"></i>
+        </div>
+        <!-- MUSIC BUTTON -->
+        <div class="music-player" onclick="toggleMusic()">
+            <div class="bars">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
 
-searchInput.addEventListener("input", function () {
-    const value = this.value.toLowerCase();
+        <!-- AUDIO -->
+        <audio id="bgMusic" loop>
+            <source src="music/always_with_me_flute.mp3" type="audio/mpeg">
+        </audio>
+        <!-- MESSAGE POPUP -->
+        <div class="message-popup" id="messagePopup">
 
-    cards.forEach(card => {
-        const name = card.querySelector(".name").textContent.toLowerCase();
-        card.style.display = name.includes(value) ? "block" : "none";
-    });
-});
-</script>
-<script>
-const text = "Welcome to CSE 24";
-const el = document.querySelector(".typewriter");
+            <div class="popup-box">
 
-let index = 0;
+                <!-- HEADER -->
+                <div class="popup-header">
+                    <h3>CSE 24 Messages</h3>
 
-function typeEffect() {
-    if (index < text.length) {
-        el.innerHTML = text.substring(0, index + 1);
-        index++;
-        setTimeout(typeEffect, 80);
-    }
-}
+                    <button class="close-btn" onclick="closeMessages()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
 
-typeEffect();
-</script>
-<script>
-const music = document.getElementById("bgMusic");
-const player = document.querySelector(".music-player");
+                <!-- MESSAGE AREA -->
+                <div class="messages-container" id="messagesContainer">
 
-let isPlaying = false;
+                </div>
 
-function toggleMusic() {
-    if (!isPlaying) {
-        music.muted = false;
-        music.play();
-        player.classList.add("playing");
-    } else {
-        music.pause();
-        player.classList.remove("playing");
-    }
-    isPlaying = !isPlaying;
-}
-</script>
-<script type="module" src="script.js"></script>
-<p style="text-align: right;">©miraz3301</p>
+                <!-- INPUT -->
+                <div class="message-input">
+
+                    <input type="text" id="username" placeholder="Your name">
+
+                    <textarea id="messageText" placeholder="Write a message for the batch..."></textarea>
+
+                    <button onclick="sendMessage()">
+                        Send Message
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <h1 class="typewriter"></h1>
+        <br>
+        <h4>Military Institute of Science and Technology</h4>
+        <h4>Department of CSE, Batch CSE 24</h4>
+
+        <a href="#alumni">
+            <button>Explore the Batch ↓</button>
+        </a>
+
+    </section>
+
+    <!-- ALUMNI -->
+    <section id="alumni" class="alumni">
+
+        <h2>Batch Directory</h2>
+        <p class="subtitle">Meet the members of CSE 24.</p>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search by name...">
+        </div>
+
+        <div class="grid">
+        </div>
+
+    </section>
+
+    <script>
+        const searchInput = document.querySelector(".search-bar input");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", function () {
+            const value = this.value.toLowerCase();
+
+            cards.forEach(card => {
+                const name = card.querySelector(".name").textContent.toLowerCase();
+                card.style.display = name.includes(value) ? "block" : "none";
+            });
+        });
+    </script>
+    <script>
+        const text = "Welcome to CSE 24";
+        const el = document.querySelector(".typewriter");
+
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                el.innerHTML = text.substring(0, index + 1);
+                index++;
+                setTimeout(typeEffect, 80);
+            }
+        }
+
+        typeEffect();
+    </script>
+    <script>
+        const music = document.getElementById("bgMusic");
+        const player = document.querySelector(".music-player");
+
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                music.muted = false;
+                music.play();
+                player.classList.add("playing");
+            } else {
+                music.pause();
+                player.classList.remove("playing");
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+    <script>
+        const starsContainer = document.getElementById("stars");
+
+        const colors = [
+            "#6c63ff",
+            "#8b84ff",
+            "#00d4ff"
+        ];
+
+        for (let i = 0; i < 7; i++) {
+
+            const star = document.createElement("div");
+            star.className = "star";
+
+            const size = Math.random() * 3 + 3;
+
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+
+            star.style.left = Math.random() * 100 + "%";
+            star.style.top = Math.random() * 100 + "%";
+
+            const color =
+                colors[Math.floor(Math.random() * colors.length)];
+
+            star.style.background = color;
+
+            star.style.boxShadow =
+                `0 0 8px ${color},
+         0 0 15px ${color}`;
+
+            star.style.animationDuration =
+                `${4 + Math.random() * 4}s,
+         ${5 + Math.random() * 5}s`;
+
+            starsContainer.appendChild(star);
+        }
+    </script>
+    <p style="text-align: right;">© github:miraz3301</p>
 </body>
+
 </html>

@@ -627,6 +627,89 @@
                 transform: translateY(-30px);
             }
         }
+
+        .footer {
+            padding: 20px 60px;
+            background: #0b0b0f;
+        }
+
+        .footer-line {
+            width: 100%;
+            height: 1px;
+
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(108, 99, 255, 0.9),
+                    rgba(0, 212, 255, 0.9),
+                    transparent);
+
+            margin-bottom: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .add-info-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 12px 18px;
+
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+
+            color: white;
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+        }
+
+        .add-info-btn i {
+            color: #6c63ff;
+        }
+
+        .add-info-btn:hover {
+            background: #161622;
+            border-color: #6c63ff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 12px rgba(108, 99, 255, 0.3),
+                0 0 20px rgba(0, 212, 255, 0.15);
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .copyright a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+
+            .footer {
+                padding: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -838,7 +921,32 @@
         });
     </script>
 
-    <p style="text-align: right;">© github:miraz3301</p>
+    <footer class="footer">
+
+        <div class="footer-line"></div>
+
+        <div class="footer-content">
+
+            
+            <a href="https://forms.gle/BYEdijLxEwG9Nk7bA" target="_blank" rel="noopener noreferrer"
+                class="add-info-btn">
+
+                <i class="fa-solid fa-plus"></i>
+                <span>Add My Info</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+            <p class="copyright">
+                © 2026 github:
+                <a href="https://github.com/miraz3301" target="_blank">
+                    miraz3301
+                </a>
+            </p>
+
+        </div>
+
+    </footer>
 </body>
 
 </html>

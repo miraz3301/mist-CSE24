@@ -1,16 +1,15 @@
 import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import 
-{
-    getFirestore,
-    collection,
-    addDoc,
-    query,
-    orderBy,
-    onSnapshot,
-    serverTimestamp
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+getFirestore,
+collection,
+addDoc,
+query,
+orderBy,
+onSnapshot,
+serverTimestamp
 }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 fetch("students.json")
     .then(res => res.json())
@@ -21,34 +20,50 @@ fetch("students.json")
             const card = document.createElement("div");
             card.classList.add("card");
 
+            let socials = "";
+
+            if (s.facebook) {
+                socials += `
+        <a href="${s.facebook}" class="fb" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    `;
+            }
+
+            if (s.linkedin) {
+                socials += `
+        <a href="${s.linkedin}" class="linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    `;
+            }
+
+            if (s.phone) {
+                socials += `
+        <button onclick="copyPhone('${s.phone}')">
+            <i class="fas fa-phone"></i>
+        </button>
+    `;
+            }
+
             card.innerHTML = `
-                <div class="avatar">
-                    <img src="${s.image}" alt="${s.name}">
-                </div>
+    <div class="avatar">
+        <img src="${s.image}" alt="${s.name}">
+    </div>
 
-                <div class="name">${s.name}</div>
-                <div class="role">${s.role}</div>
-                <div class="tag">${s.section}</div>
+    <div class="name">${s.name}</div>
+    <div class="role">${s.role}</div>
+    <div class="tag">${s.section}</div>
 
-                <div class="socials">
-                    <a href="${s.facebook}" class="fb" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a href="${s.linkedin}" class="linkedin" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-
-                    <button onclick="copyPhone('${s.phone}')">
-                        <i class="fas fa-phone"></i>
-                    </button>
-                </div>
-            `;
+    <div class="socials">
+        ${socials}
+    </div>
+`;
 
             grid.appendChild(card);
         });
 
-        
+
         const searchInput = document.querySelector(".search-bar input");
 
         searchInput.addEventListener("input", function () {
@@ -63,61 +78,56 @@ fetch("students.json")
 
     });
 
-/* FIREBASE CONFIG */
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDLidcr-mjQc067GXByR624kAxwsEkZsv4",
-  authDomain: "cse24-message.firebaseapp.com",
-  projectId: "cse24-message",
-  storageBucket: "cse24-message.firebasestorage.app",
-  messagingSenderId: "486721044271",
-  appId: "1:486721044271:web:0dd35ff2ec64d7ad4a2bda",
-  measurementId: "G-6HFEBEZ3L0"
+    apiKey: "AIzaSyDLidcr-mjQc067GXByR624kAxwsEkZsv4",
+    authDomain: "cse24-message.firebaseapp.com",
+    projectId: "cse24-message",
+    storageBucket: "cse24-message.firebasestorage.app",
+    messagingSenderId: "486721044271",
+    appId: "1:486721044271:web:0dd35ff2ec64d7ad4a2bda",
+    measurementId: "G-6HFEBEZ3L0"
 };
 
 
-/* INIT FIREBASE */
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
 
-/* ELEMENTS */
 const popup =
-document.getElementById("messagePopup");
+    document.getElementById("messagePopup");
 
 const container =
-document.getElementById("messagesContainer");
+    document.getElementById("messagesContainer");
 
 
-/* OPEN POPUP */
 window.openMessages = function () {
 
     popup.style.display = "flex";
 }
 
 
-/* CLOSE POPUP */
 window.closeMessages = function () {
 
     popup.style.display = "none";
 }
 
 
-/* SEND MESSAGE */
 window.sendMessage = async function () {
 
     const username =
-    document.getElementById("username");
+        document.getElementById("username");
 
     const messageText =
-    document.getElementById("messageText");
+        document.getElementById("messageText");
 
 
     const name =
-    username.value.trim();
+        username.value.trim();
 
     const text =
-    messageText.value.trim();
+        messageText.value.trim();
 
 
     if (!name || !text) {
@@ -156,7 +166,6 @@ window.sendMessage = async function () {
 }
 
 
-/* LIVE MESSAGE LOADING */
 const q = query(
     collection(db, "messages"),
     orderBy("createdAt", "desc")
@@ -190,14 +199,14 @@ onSnapshot(q, (snapshot) => {
         if (msg.createdAt) {
 
             time =
-            msg.createdAt
-            .toDate()
-            .toLocaleString();
+                msg.createdAt
+                    .toDate()
+                    .toLocaleString();
         }
 
 
         const div =
-        document.createElement("div");
+            document.createElement("div");
 
         div.className = "message";
 
